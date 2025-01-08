@@ -1,12 +1,11 @@
 import styles from './App.module.css';
 import PersonData from './PersonData';
-function personCard({searchQuery, filteredData, isSearched}) {
+function personCard({searchQuery, filteredData}) {
     return(
     <div className={styles.personList}>
           {filteredData.length > 0 ? (
-            filteredData.map((person) => (
-              <div key={person.id} className={styles.personItem}>
-                <PersonData person={person} />
+            filteredData.map((movie) => (
+              <div key={movie.id} className={styles.personItem}>
               </div>
             ))
           ) : (

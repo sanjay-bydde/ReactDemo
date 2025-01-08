@@ -1,36 +1,71 @@
 .AppHeader {
   text-align: center;
-  background-color: #282c34;
+  background-color: black;
   width: 100%;
   border-color: #282c34;
   color:aliceblue;
+  margin:0;
+  padding: 0;
+}
+.Menu{
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: white;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  gap: 20px;
+}
+.Menu>p{
+  font-weight: bold;
+  font-size: larger;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 .inputContainer {
-  align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  height: auto;
+}
+.searchContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width:25%;
+}
+.searchResults {
+  display: flex; /* Aligns the search bar and results horizontally */
+  flex-direction: row; /* Content will be to the right of the search bar */
+  width: 85%; /* Ensure it spans full width */
+  margin-top: 20px; /* Adds spacing between input and results */
+  margin-left: 40px;
 }
 
-
 .searchInput {
-  width: 60%;
+  position: relative;
+  width: 100%;
   padding: 10px 40px 10px 10px; 
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: black;
+  margin-left: 5px;
   color:white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 16px;
 }
 
 .searchButton {
-  position: absolute;
-  right: 55px;
-  top: 50%;
+  position: relative;
+  top:6%;
+  right:9%;
+  margin-top: 25px;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -38,23 +73,9 @@
 }
 
 .searchButton i {
-  color: #282c34;
+  color: red;
   font-size: 18px;
 }
-
-.searchBar{
-  text-align: center;
-  width: 150px;
-  display: flex;
-  flex-direction: row;
-  margin-left: 45%;
-  justify-content: center;  
-  border-color: #282c34;
-  color:black;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(110, 97, 97, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .personImage{
   width: 200px;
   height: 200px;
@@ -83,29 +104,33 @@
   box-sizing: border-box;
 }
 .suggestions{
-  position: relative;
-  top: 100%;
-  left: 41%;
-  width: 280px;
+  position: absolute;
+  width: 75.4%;
+  top: 14.8%;
+  left: -1.9px;
   max-height: 200px;
   overflow-y: auto;
   padding-top: 10px;
+  margin-left: 47px;
   background: black;
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 10px 10px;
   z-index: 10;
 }
 .suggestionItem {
-  position: relative;
-  transform: translateY(-50%);
-  padding-left: 5px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  padding: 8px;
   cursor: pointer;
   color: white;
   background-color: black;
-  border-radius: 0px;
+  transition: background-color 0.3s ease;
 }
-
+.suggestionsContainer {
+  margin-left: 10px; /* Space between search bar and results */
+  width: 70%; /* Fixed width for results */
+  border-radius: 8px;
+  padding: 0px 10px 10px;
+  font-size: 14px;
+  color: #333;
+}
 .suggestionItem:hover {
   color:black;
   background-color: grey;
@@ -113,6 +138,21 @@
 
 .suggestionItem:last-child {
   border-bottom: none;
+}
+.Details{
+  width: 350px; /* Fixed width for each card */
+  height: auto;
+  min-height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures content doesn't overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(173, 171, 171);
+  padding-left: 20px;
+  text-align: initial;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  
 }
 .carImage{
   width: 80%;
@@ -133,4 +173,59 @@
   font-size: 14px;
   color: #555;
   margin: 5px 0 15px;
+}
+
+.filters {
+  position: relative;
+  z-index: 5;
+  left:18px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+.filterSection {
+  margin-bottom: 20px;
+}
+
+.filterSection h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filterButton {
+  padding: 10px 15px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.filterButton.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+
+.slider {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.slider + span {
+  font-size: 1em;
+  font-weight: bold;
+  margin-left: 10px;
 }
